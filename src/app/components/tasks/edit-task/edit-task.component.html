@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Edit task</h2>
+<mat-dialog-content [formGroup]="form">
+    <mat-form-field>
+
+        <div class="row">
+            <input matInput type="text" placeholder="Task Title" value="{{data.title}}" formControlName="title">
+        </div>
+    </mat-form-field>
+    <mat-form-field>
+
+        <div class="row">
+            <textarea placeholder="Description" matInput  value="{{data.description}}" formControlName="description"
+                class="taskFormField, textAreaForm"></textarea>
+        </div>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="button-wrapper">
+    <button type="button" class="btn btn-default" mat-button (click)="close()">Cancel</button>
+    <button type="button" class="btn btn-primary" mat-button (click)="editTask()">Edit</button>
+</mat-dialog-actions>

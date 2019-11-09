@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Delete Task {{data.title}}</h2>
+<mat-dialog-content>
+    <mat-form-field>
+        <p>Are you sure do you want to delete this task?</p>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="button-wrapper">
+    <button type="button" class="btn btn-default" mat-button (click)="close()">Cancel</button>
+    <button type="button" class="btn btn-danger" mat-button (click)="deleteTask()">Delete</button>
+</mat-dialog-actions>

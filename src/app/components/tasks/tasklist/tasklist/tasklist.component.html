@@ -1,0 +1,31 @@
+<mat-card class="row task-card" *ngFor="let task of tasks">
+    <mat-card-header class="taskCardHeader">
+        <mat-card-subtitle *ngIf="!task?.done" class="taskDescription">Created At: {{task.creationDate| date: 'short'}}
+        </mat-card-subtitle>
+        <mat-card-subtitle *ngIf="task?.done" class="taskDescription">Completed on: {{task.doneDate | date: 'short'}}
+        </mat-card-subtitle>
+        <mat-card-title>{{task.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="taskDescription">
+            {{task.description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="btn-group row">
+            <div>
+                <button type="button" class="btn btn-secondary" *ngIf="!task?.done" mat-button
+                    (click)="editTask(task)">EDIT</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-success" *ngIf="!task?.done" mat-button
+                    (click)="markAsDone(task)">DONE</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-danger" *ngIf="task?.done" mat-button
+                    (click)="deteleTask(task)">DELETE</button>
+            </div>
+
+        </div>
+    </mat-card-actions>
+</mat-card>
